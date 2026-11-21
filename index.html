@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>أسرار صناعة المحتوى</title>
+<meta name="description" content="كتاب «أسرار صناعة المحتوى»: من أول قرار انتباه عند المشاهد لحد قراءة الأرقام وتطوير الفيديو الجاي بتاعك. 35 فصل و17 ورقة شغل جاهزة.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== عدّل هنا ===== */
+/* السعر ولينك الدفع في السكريبت اللي في آخر الصفحة */
+
+:root{
+  --navy:#1e3a55; --navy-2:#2a4a68; --ink:#1b2430; --muted:#5b6672;
+  --cream:#f6f1e7; --paper:#fffdf8; --gold:#d9a53a; --line:#e3dccd;
+  --on-navy:#f4efe4; --on-navy-muted:#a9b6c4;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#ece6da; --muted:#a7afb8; --cream:#16222f; --paper:#0f1924; --line:#2a3a4b;
+    --navy:#1a3047; --navy-2:#223c57;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#ece6da; --muted:#a7afb8; --cream:#16222f; --paper:#0f1924; --line:#2a3a4b;
+  --navy:#1a3047; --navy-2:#223c57;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;line-height:1.75;font-size:17px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.mono{font-family:"IBM Plex Mono",monospace;letter-spacing:.18em;font-size:12px;text-transform:uppercase}
+h1,h2,h3{line-height:1.35;margin:0}
+h2{font-size:clamp(26px,4vw,36px);margin-bottom:14px}
+p{margin:0 0 14px}
+a{color:inherit}
+section{padding:72px 0}
+.eyebrow{color:var(--gold);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.eyebrow::after{content:"";width:36px;height:2px;background:var(--gold)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 28px;border-radius:10px;font-weight:700;font-size:18px;text-decoration:none;transition:transform .15s,box-shadow .15s;border:2px solid transparent;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:#1b2430;box-shadow:0 8px 24px -10px rgba(217,165,58,.8)}
+.btn-ghost{border-color:currentColor;color:inherit;background:transparent;font-weight:500}
+
+/* hero */
+.hero{background:var(--navy);color:var(--on-navy);padding:64px 0 80px;position:relative;overflow:hidden}
+.hero .num{position:absolute;inset-inline-start:-10px;top:-30px;font-family:"IBM Plex Mono",monospace;font-size:clamp(160px,28vw,320px);color:rgba(255,255,255,.06);line-height:1;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center;position:relative}
+.hero h1{font-size:clamp(32px,5.4vw,54px);margin:6px 0 18px}
+.hero h1 .hl{color:var(--gold)}
+.hero .lead{font-size:clamp(17px,2vw,20px);color:var(--on-navy-muted);max-width:560px;margin-bottom:28px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.price-tag{display:flex;align-items:baseline;gap:8px;margin-top:20px;color:var(--on-navy-muted);font-size:15px}
+.price-tag s{opacity:.7;font-size:17px}
+.price-tag strong{font-size:28px;color:var(--on-navy)}
+.book{aspect-ratio:419/595;background:linear-gradient(160deg,#24476a,#1a3149);border-radius:6px 14px 14px 6px;box-shadow:-14px 22px 50px -18px rgba(0,0,0,.6), inset 6px 0 0 rgba(0,0,0,.25);padding:30px 26px;display:flex;flex-direction:column;justify-content:space-between;max-width:300px;margin-inline:auto;transform:rotate(-3deg)}
+.book .bn{font-family:"IBM Plex Mono",monospace;font-size:64px;color:rgba(255,255,255,.18);text-align:left;line-height:1}
+.book .bt{font-size:28px;font-weight:700;color:#fff;line-height:1.3}
+.book .bt::before{content:"";display:block;width:40px;height:3px;background:var(--gold);margin-bottom:14px}
+.book .bb{color:var(--on-navy-muted);font-size:13px;display:flex;justify-content:space-between}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--paper);border:1px solid var(--line);border-radius:14px;margin-top:-40px;position:relative;z-index:2}
+.stat{padding:22px 16px;text-align:center;border-inline-start:1px solid var(--line)}
+.stat:first-child{border-inline-start:0}
+.stat b{display:block;font-size:30px;color:var(--gold);font-family:"IBM Plex Mono",monospace;font-weight:500}
+.stat span{color:var(--muted);font-size:14px}
+
+/* problem */
+.pains{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.pain{background:var(--cream);border-radius:12px;padding:22px;border-top:3px solid var(--gold)}
+.pain h3{font-size:19px;margin-bottom:8px}
+.pain p{color:var(--muted);margin:0;font-size:16px}
+.quote{margin-top:36px;border-inline-start:4px solid var(--navy);padding:6px 20px;font-size:clamp(20px,2.6vw,26px);font-weight:700}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .quote{border-color:var(--gold)}}
+
+/* parts */
+.parts{background:var(--cream)}
+.part-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.part{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:22px}
+.part .mono{color:var(--gold)}
+.part h3{font-size:20px;margin:6px 0 8px}
+.part p{color:var(--muted);font-size:15.5px;margin:0}
+details{margin-top:22px;background:var(--paper);border:1px solid var(--line);border-radius:12px}
+summary{cursor:pointer;padding:16px 20px;font-weight:700;list-style:none;display:flex;justify-content:space-between}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:"IBM Plex Mono",monospace;color:var(--gold)}
+details[open] summary::after{content:"−"}
+.toc{columns:2;column-gap:32px;padding:0 20px 20px;margin:0;list-style:none}
+.toc li{break-inside:avoid;padding:6px 0;border-bottom:1px dashed var(--line);font-size:15.5px;display:flex;gap:10px}
+.toc li span{font-family:"IBM Plex Mono",monospace;color:var(--muted);min-width:24px}
+
+/* preview */
+.preview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+.preview figure{margin:0}
+.preview img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line);box-shadow:0 18px 40px -24px rgba(0,0,0,.45);display:block;background:#fff}
+.preview figcaption{color:var(--muted);font-size:14.5px;margin-top:10px;text-align:center}
+
+/* free chapter */
+.free{background:var(--navy);color:var(--on-navy)}
+.free-box{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
+.free p{color:var(--on-navy-muted)}
+.free ul{margin:0 0 16px;padding-inline-start:20px;color:var(--on-navy-muted)}
+
+/* fit */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}
+.fit-col{border-radius:12px;padding:24px;border:1px solid var(--line)}
+.fit-col.yes{background:var(--cream)}
+.fit-col h3{font-size:19px;margin-bottom:12px}
+.fit-col ul{margin:0;padding:0;list-style:none}
+.fit-col li{padding:7px 0;display:flex;gap:10px;font-size:16px}
+.fit-col li::before{flex:none;font-family:"IBM Plex Mono",monospace;color:var(--gold)}
+.fit-col.yes li::before{content:"✓"}
+.fit-col.no li::before{content:"—";color:var(--muted)}
+.fit-col.no li{color:var(--muted)}
+
+/* author */
+.author{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;background:var(--cream);border-radius:14px;padding:28px}
+.avatar{width:84px;height:84px;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-family:"IBM Plex Mono",monospace;font-size:24px}
+
+/* faq */
+.faq details{margin-top:12px}
+.faq .ans{padding:0 20px 18px;color:var(--muted)}
+
+/* final */
+.final{text-align:center;background:var(--navy);color:var(--on-navy)}
+.final p{color:var(--on-navy-muted);max-width:560px;margin:0 auto 26px}
+.final .price-tag{justify-content:center}
+footer{text-align:center;color:var(--muted);font-size:14px;padding:28px 0}
+
+/* quiz */
+.quiz{background:var(--cream)}
+.quiz-card{max-width:680px;margin:28px auto 0;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:28px}
+.q-meta{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:14px}
+.q-back{background:none;border:0;color:var(--muted);font:inherit;cursor:pointer;padding:8px 6px}
+.q-bar{height:4px;background:var(--line);border-radius:99px;overflow:hidden;margin-top:10px}
+.q-bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+.q-text{font-size:clamp(20px,2.6vw,24px);font-weight:700;margin:22px 0 16px}
+.q-opts{display:flex;flex-direction:column;gap:10px}
+.q-opt{text-align:start;font:inherit;font-size:16px;color:var(--ink);background:var(--cream);border:1.5px solid var(--line);border-radius:10px;padding:14px 18px;cursor:pointer;transition:border-color .15s}
+.q-opt:hover,.q-opt:focus-visible{border-color:var(--gold);outline:none}
+.q-res .mono{color:var(--gold)}
+.q-res h3{font-size:clamp(26px,3.4vw,32px);margin:6px 0 16px}
+.q-box{border-radius:12px;padding:18px 20px;margin-bottom:12px;background:var(--cream)}
+.q-box.dark{background:var(--navy);color:var(--on-navy)}
+.q-box h4{margin:0 0 6px;font-size:14px;color:var(--gold)}
+.q-box p{margin:0}
+.q-chs{list-style:none;margin:0;padding:0}
+.q-chs li{display:flex;gap:12px;padding:5px 0;border-bottom:1px dashed var(--line)}
+.q-chs li:last-child{border-bottom:0}
+.q-chs span{font-family:"IBM Plex Mono",monospace;color:var(--gold);min-width:26px}
+.q-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.q-small{color:var(--muted);font-size:13px;margin-top:10px}
+
+/* sticky mobile bar */
+.sticky{position:fixed;inset-inline:0;bottom:0;background:var(--paper);border-top:1px solid var(--line);padding:10px 16px;display:none;align-items:center;justify-content:space-between;gap:12px;z-index:10;transform:translateY(110%);transition:transform .25s}
+.sticky.show{transform:none}
+.sticky .btn{padding:11px 20px;font-size:16px}
+.sticky b{font-size:18px}
+
+@media (max-width:860px){
+  section{padding:56px 0}
+  .hero{padding:44px 0 72px}
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .hero-grid .cover{order:-1}
+  .book{max-width:200px;padding:20px 18px}
+  .book .bn{font-size:44px}.book .bt{font-size:20px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(3){border-inline-start:0}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .pains,.part-grid,.preview-grid,.fit{grid-template-columns:1fr}
+  .preview-grid{max-width:380px;margin-inline:auto}
+  .toc{columns:1}
+  .free-box{grid-template-columns:1fr}
+  .author{grid-template-columns:1fr;text-align:center;justify-items:center}
+  .sticky{display:flex}
+  body{padding-bottom:70px}
+  .wrap{padding:0 16px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="num" aria-hidden="true">01</div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow mono">كتاب · BOOK</div>
+      <h1>الفيديو بتاعك كويس…<br><span class="hl">بس الناس بتعدّي عليه؟</span></h1>
+      <p class="lead">«أسرار صناعة المحتوى» بيشرحلك ليه ده بيحصل، وإزاي تبني الفيديو خطوة بخطوة: من أول قرار عند المشاهد إنه يدّيك فرصة، لحد ما تقرا الأرقام وتعرف تطوّر الفيديو الجاي.</p>
+      <div class="actions">
+        <a class="btn btn-gold js-buy" href="#">احجز نسختك</a>
+        <a class="btn btn-ghost" href="#quiz">اعرف تبدأ منين (دقيقتين)</a>
+      </div>
+      <div class="price-tag">سعر الحجز المبكر <s class="js-old"></s> <strong class="js-price"></strong> <span class="js-note"></span></div>
+    </div>
+    <div class="cover" aria-hidden="true">
+      <div class="book">
+        <div class="bn">35</div>
+        <div class="bt">أسرار<br>صناعة<br>المحتوى</div>
+        <div class="bb"><span>ByRG</span><span class="mono" style="letter-spacing:.1em">542 P</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><b>35</b><span>فصل</span></div>
+    <div class="stat"><b>542</b><span>صفحة</span></div>
+    <div class="stat"><b>17</b><span>ورقة شغل جاهزة</span></div>
+    <div class="stat"><b>1</b><span>قاموس مصطلحات</span></div>
+  </div>
+</div>
+
+<!-- ===== PROBLEM ===== -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow mono">المشكلة</div>
+    <h2>المشكلة غالبًا مش في الكاميرا</h2>
+    <p style="color:var(--muted);max-width:680px">المشاهد مش قاعد مستني الفيديو بتاعك. هو بيقلّب بسرعة، وقدّامه سيل من الصور والفيديوهات والإشعارات. فالمحتوى ممكن يبقى كويس جدًا، وبرضه يتعدّى.</p>
+    <div class="pains">
+      <div class="pain"><h3>بتصوّر كتير ومفيش نتيجة</h3><p>بتتعب في الإضاءة والزوايا والمونتاج، والفيديو بيقف عند نفس الأرقام.</p></div>
+      <div class="pain"><h3>بتنسخ هوكات جاهزة</h3><p>نفس الجملة اللي نجحت مع غيرك، معاك ما بتشتغلش، ومش فاهم ليه.</p></div>
+      <div class="pain"><h3>مش عارف تقرا الأرقام</h3><p>الفيديو فشل، بس مش عارف المشكلة كانت في البداية ولا في اللي بعدها.</p></div>
+    </div>
+    <div class="quote">الـHook ما بيمسكش المشاهد.<br>هو بيحاول يكسب قراره إنه يدّيك فرصة.</div>
+  </div>
+</section>
+
+<!-- ===== QUIZ ===== -->
+<section class="quiz" id="quiz">
+  <div class="wrap">
+    <div class="eyebrow mono">كويز ببلاش · 8 أسئلة</div>
+    <h2>ليه المحتوى بتاعك مش بيكبر؟</h2>
+    <p style="color:var(--muted);max-width:680px">جاوب على 8 أسئلة في دقيقتين. هتعرف المشكلة الأساسية غالبًا فين، وخطوة تعملها النهارده، والفصول اللي هتفيدك أكتر. إجاباتك بتفضل على موبايلك ومش بتتبعت لحد.</p>
+    <div class="quiz-card" aria-live="polite">
+      <div id="qWrap">
+        <div class="q-meta"><span id="qNum"></span><button class="q-back" id="qBack" type="button" hidden>رجوع</button></div>
+        <div class="q-bar" aria-hidden="true"><i id="qBar"></i></div>
+        <p class="q-text" id="qText"></p>
+        <div class="q-opts" id="qOpts"></div>
+      </div>
+      <div class="q-res" id="qRes" hidden></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PARTS ===== -->
+<section class="parts">
+  <div class="wrap">
+    <div class="eyebrow mono">جوّه الكتاب</div>
+    <h2>6 مراحل، من المشاهد لحد النظام بتاعك</h2>
+    <div class="part-grid">
+      <div class="part"><div class="mono">PART 01 · ف 1–2</div><h3>المشاهد والانتباه</h3><p>المشاهد بيبقى في حالة إيه وهو بيقلّب، وإزاي بياخد قرار «أشوف ولا أعدّي».</p></div>
+      <div class="part"><div class="mono">PART 02 · ف 3–7</div><h3>الهوك</h3><p>الهوك كوظيفة مش كقالب: أشكاله، وليه المشاهد يهتم، وإزاي تكتبه، وإزاي تكمّل بعده.</p></div>
+      <div class="part"><div class="mono">PART 03 · ف 8–12</div><h3>الفكرة والسكريبت</h3><p>من موضوع لـ Concept، وفهم الجمهور، والوعد والقيمة، والسكريبت، والقصة.</p></div>
+      <div class="part"><div class="mono">PART 04 · ف 13–19</div><h3>الإنتاج</h3><p>اللغة البصرية، والإضاءة، والتصوير بالموبايل والكاميرا، والصوت، والمونتاج، والإيقاع.</p></div>
+      <div class="part"><div class="mono">PART 05 · ف 20–27</div><h3>الاستراتيجية والانتشار</h3><p>أنواع المحتوى، والبراند، والـCTA، والخوارزمية من غير أساطير، والـPackaging.</p></div>
+      <div class="part"><div class="mono">PART 06 · ف 28–35</div><h3>الأرقام والتطوير</h3><p>قراءة الأرقام، وتشخيص فشل الفيديو، والتجارب، ومن فيديو واحد لسلسلة ونظام شخصي.</p></div>
+    </div>
+    <details>
+      <summary>كل الفصول (35)</summary>
+      <ol class="toc">
+        <li><span>01</span>الإنسان قبل المحتوى</li>
+        <li><span>02</span>قرار الانتباه</li>
+        <li><span>03</span>فهم الـHook</li>
+        <li><span>04</span>قنوات ظهور الـHook</li>
+        <li><span>05</span>ليه المشاهد يهتم؟</li>
+        <li><span>06</span>من الـTrigger إلى كتابة الـHook</li>
+        <li><span>07</span>من الـHook إلى الاستمرار</li>
+        <li><span>08</span>من الموضوع إلى Concept</li>
+        <li><span>09</span>فهم الجمهور</li>
+        <li><span>10</span>الوعد والقيمة</li>
+        <li><span>11</span>كتابة السكريبت</li>
+        <li><span>12</span>السرد والقصة</li>
+        <li><span>13</span>اللغة البصرية</li>
+        <li><span>14</span>الإضاءة</li>
+        <li><span>15</span>التصوير بالموبايل والكاميرا</li>
+        <li><span>16</span>الصوت</li>
+        <li><span>17</span>المونتاج كصناعة للمعنى</li>
+        <li><span>18</span>الإيقاع والـRetention</li>
+        <li><span>19</span>النص والجرافيك</li>
+        <li><span>20</span>أنواع المحتوى</li>
+        <li><span>21</span>Content Strategy</li>
+        <li><span>22</span>الهوية والـBrand</li>
+        <li><span>23</span>CTA</li>
+        <li><span>24</span>الخوارزمية بدون أساطير</li>
+        <li><span>25</span>هندسة الانتشار</li>
+        <li><span>26</span>Packaging</li>
+        <li><span>27</span>تكييف المحتوى مع المنصة</li>
+        <li><span>28</span>قراءة الأرقام</li>
+        <li><span>29</span>تشخيص فشل الفيديو</li>
+        <li><span>30</span>التجارب والـA/B</li>
+        <li><span>31</span>حلقة التطوير</li>
+        <li><span>32</span>Case Studies</li>
+        <li><span>33</span>من الصفر إلى فيديو كامل</li>
+        <li><span>34</span>من فيديو إلى سلسلة</li>
+        <li><span>35</span>نظام صناعة المحتوى الشخصي</li>
+        <li><span>+</span>الملاحق: 17 ورقة شغل وقاموس مصطلحات</li>
+      </ol>
+    </details>
+  </div>
+</section>
+
+<!-- ===== PREVIEW ===== -->
+<section class="preview">
+  <div class="wrap">
+    <div class="eyebrow mono">من جوّه</div>
+    <h2>مش كلام وبس. صفحات معمولة عشان تشتغل بيها</h2>
+    <p style="color:var(--muted);max-width:680px">كل فصل فيه أمثلة، وتمرين «جرّب دلوقتي»، وخلاصة. وفي الآخر أوراق شغل تطبعها أو تملاها قبل التصوير وبعد النشر.</p>
+    <div class="preview-grid">
+      <figure><img src="img/viewer-state.jpg" alt="صفحة من الفصل الأول عن حالة المشاهد على السوشيال" loading="lazy" width="641" height="909"><figcaption>الفصل 1: المشاهد بيبقى في حالة إيه</figcaption></figure>
+      <figure><img src="img/hook-promise.jpg" alt="صفحة من الفصل الثالث: الهوك وعد" loading="lazy" width="641" height="909"><figcaption>الفصل 3: الهوك وعد، مش حيلة</figcaption></figure>
+      <figure><img src="img/hook-worksheet.jpg" alt="ورقة شغل الهوك من الملاحق" loading="lazy" width="641" height="909"><figcaption>ملحق 1: ورقة شغل الهوك</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FREE CHAPTER ===== -->
+<section class="free" id="free">
+  <div class="wrap free-box">
+    <div>
+      <div class="eyebrow mono">ببلاش</div>
+      <h2>جرّب قبل ما تحجز: فصل «فهم الـHook» كامل</h2>
+      <p>10 صفحات هتعرف فيها:</p>
+      <ul>
+        <li>ليه الهوك مش مجرد أول جملة، ومش لازم يبقى صدمة</li>
+        <li>الفرق بين الهوك والـRetention</li>
+        <li>الفرق بين هوك صادق والـClickbait</li>
+      </ul>
+    </div>
+    <a class="btn btn-gold js-free" href="#">ابعتلي الفصل المجاني</a>
+  </div>
+</section>
+
+<!-- ===== FIT ===== -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow mono">لمين</div>
+    <h2>الكتاب ده مناسب ليك؟</h2>
+    <div class="fit">
+      <div class="fit-col yes">
+        <h3>مناسب لو انت</h3>
+        <ul>
+          <li>صانع محتوى بيبدأ أو عايز يفهم ليه الفيديوهات بتاعته مش بتوصل</li>
+          <li>صاحب بيزنس (عيادة، محل، ستوديو) بيعمل المحتوى بتاعه بنفسه</li>
+          <li>مصوّر أو مونتير عايز يفهم المحتوى من ناحية المشاهد مش المعدات بس</li>
+          <li>بتعمل ريلز أو شورتس أو يوتيوب طويل</li>
+        </ul>
+      </div>
+      <div class="fit-col no">
+        <h3>مش مناسب لو</h3>
+        <ul>
+          <li>بتدوّر على قوالب هوكات تنسخها وخلاص</li>
+          <li>مستني وعد بأرقام مضمونة في أسبوع</li>
+          <li>مش ناوي تجرّب وتطبّق</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AUTHOR ===== -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="author">
+      <div class="avatar">RG</div>
+      <div>
+        <div class="eyebrow mono" style="margin-bottom:6px">مين كتب الكتاب</div>
+        <h3 style="font-size:22px;margin-bottom:8px">رمضان · ByRG</h3>
+        <p style="color:var(--muted);margin:0">مصوّر وصانع محتوى. الكتاب ده خلاصة اللي اتعلمته من الشغل مع العملاء ومن التجربة والغلط في المحتوى بتاعي، ومكتوب عشان تقدر تطبّقه على الشغل بتاعك على طول.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq" style="padding-top:0">
+  <div class="wrap" style="max-width:780px">
+    <div class="eyebrow mono">أسئلة</div>
+    <h2>أسئلة بتتسأل كتير</h2>
+    <details><summary>الكتاب بأي لغة؟</summary><div class="ans">بالعامية المصرية الخفيفة، مع المصطلحات الإنجليزية المستخدمة في المجال زي Hook وRetention، وفي آخره قاموس بيشرح كل مصطلح.</div></details>
+    <details><summary>محتاج كاميرا أو معدات؟</summary><div class="ans">لأ. فيه فصل كامل عن التصوير بالموبايل، وأغلب الكتاب عن الفكرة والمشاهد والكتابة قبل المعدات.</div></details>
+    <details><summary>أنا مبتدئ خالص، ينفعني؟</summary><div class="ans">أيوه. الكتاب بيبدأ من المشاهد نفسه، وفيه فصل «من الصفر إلى فيديو كامل» بيمشي معاك خطوة بخطوة.</div></details>
+    <details><summary>ينفع للريلز بس؟</summary><div class="ans">لأ. الكتاب بيركّز على الفيد، بس نفس الأفكار بتتطبّق على يوتيوب والفيديو الطويل والبودكاست، وفيه فصل عن تكييف المحتوى مع كل منصة.</div></details>
+    <details><summary>الحجز بيتم إزاي؟</summary><div class="ans">دوس «احجز نسختك» وهتفتح معاك رسالة واتساب جاهزة. ابعتها وهنأكد معاك الحجز وطريقة الدفع.</div></details>
+    <details><summary>الكتاب هيوصلني إزاي؟</summary><div class="ans">نسخة PDF، بتوصلك بعد تأكيد الحجز والدفع.</div></details>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final">
+  <div class="wrap">
+    <h2>الفيديو الجاي بتاعك يستاهل بداية أحسن</h2>
+    <p>35 فصل و17 ورقة شغل، عشان تفهم المشاهد قبل ما تمسك الكاميرا.</p>
+    <a class="btn btn-gold js-buy" href="#">احجز نسختك</a>
+    <div class="price-tag">سعر الحجز المبكر <s class="js-old"></s> <strong class="js-price"></strong> <span class="js-note"></span></div>
+  </div>
+</section>
+
+<footer>© <span id="y"></span> ByRG · أسرار صناعة المحتوى</footer>
+
+<div class="sticky" id="sticky">
+  <div><s class="js-old" style="color:var(--muted);font-size:13px"></s> <b class="js-price"></b><div style="font-size:13px;color:var(--muted)">أسرار صناعة المحتوى</div></div>
+  <a class="btn btn-gold js-buy" href="#">احجز نسختك</a>
+</div>
+
+<script>
+/* ===== عدّل القيم دي بس ===== */
+const CONFIG = {
+  price: "1000 جنيه",             // السعر اللي هيظهر في الصفحة
+  oldPrice: "3000 جنيه",          // السعر قبل الخصم (بيظهر عليه خط). سيبه "" لو مش عايزه
+  priceNote: "نسخة PDF",           // سطر صغير جنب السعر
+  whatsapp: "201024724578",        // رقم الواتساب بالكود الدولي من غير + (مثال: 201001234567)
+  whatsappMsg: "أهلًا، عايز أحجز نسختي من كتاب «أسرار صناعة المحتوى» بسعر الحجز المبكر",
+  freeMsg: "أهلًا، ابعتلي فصل «فهم الـHook» المجاني من كتاب «أسرار صناعة المحتوى»",
+  freeChapterUrl: ""               // لو فيه لينك للفصل المجاني حطه هنا. لو فاضي، الزرار بيفتح واتساب
+};
+/* ============================ */
+document.querySelectorAll('.js-price').forEach(e=>e.textContent=CONFIG.price);
+document.querySelectorAll('.js-note').forEach(e=>e.textContent=CONFIG.priceNote);
+document.querySelectorAll('.js-old').forEach(e=>{e.textContent=CONFIG.oldPrice; if(!CONFIG.oldPrice) e.remove();});
+const wa=(msg)=>'https://wa.me/'+CONFIG.whatsapp+'?text='+encodeURIComponent(msg);
+function setBuy(result){
+  const msg = CONFIG.whatsappMsg + (result ? "\nنتيجة الكويز: " + result : "");
+  document.querySelectorAll('.js-buy').forEach(e=>{e.href=wa(msg);e.target='_blank';e.rel='noopener';});
+}
+setBuy("");
+document.querySelectorAll('.js-free').forEach(e=>{e.href=CONFIG.freeChapterUrl||wa(CONFIG.freeMsg);e.target='_blank';e.rel='noopener';});
+
+/* ===== الكويز ===== */
+const CH={1:"الإنسان قبل المحتوى",2:"قرار الانتباه",3:"فهم الـHook",5:"ليه المشاهد يهتم؟",6:"من الـTrigger إلى كتابة الـHook",7:"من الـHook إلى الاستمرار",8:"من الموضوع إلى Concept",9:"فهم الجمهور",10:"الوعد والقيمة",11:"كتابة السكريبت",12:"السرد والقصة",14:"الإضاءة",15:"التصوير بالموبايل والكاميرا",16:"الصوت",17:"المونتاج كصناعة للمعنى",18:"الإيقاع والـRetention",21:"Content Strategy",24:"الخوارزمية بدون أساطير",25:"هندسة الانتشار",26:"Packaging",27:"تكييف المحتوى مع المنصة",28:"قراءة الأرقام",29:"تشخيص فشل الفيديو",30:"التجارب والـA/B",31:"حلقة التطوير"};
+const RES={
+  hook:{name:"هوك بيستأذن",what:"المحتوى بتاعك غالبًا كويس، بس أول لحظة فيه بتستأذن بدل ما تشد. صباع المشاهد بيعدّي قبل ما يوصل للحتة الحلوة.",step:"افتح آخر 3 فيديوهات، واكتب أول جملة في كل واحد. لو فيها سلام أو تعريف أو «النهارده هكلمكو»، ابدأ الفيديو الجاي بالمشكلة أو النتيجة على طول.",ch:[2,3,6,7]},
+  angle:{name:"فكرة من غير زاوية",what:"الموضوع نفسه مش هو المشكلة. المشكلة إن نفس الفكرة متقالة بنفس الشكل عند ناس كتير، فمفيش سبب يخلّي حد يقف عندك إنت.",step:"خد فكرة الفيديو الجاي، واكتبلها 3 زوايا مختلفة: غلطة شائعة، ومقارنة، ومفاجأة. صوّر الزاوية اللي تحس إنها أغرب.",ch:[5,8,10]},
+  audience:{name:"بتكلّم الناس كلهم",what:"لما الفيديو بيكلّم «أي حد مهتم»، محدش بيحس إنه بيكلّمه هو. فبيتفرج وميتابعش.",step:"اكتب جملة واحدة: «الفيديو ده لـ ___، وهيطلع منه وهو عارف ___». خلّي الفراغ الأول شخص واحد بعينه.",ch:[9,10,21]},
+  script:{name:"سكريبت بيلف ويدور",what:"الناس بتقف عند الهوك، وبعدين بتمشي في النص. غالبًا فيه جمل حلوة بس مش بتقرّب المشاهد من النتيجة.",step:"قبل الفيديو الجاي، اكتب النتيجة الأول، وبعدين الخطوات بالترتيب، وشيل أي جملة مش بتقرّب من النتيجة حتى لو حلوة.",ch:[11,12,18]},
+  production:{name:"صورة وصوت بيطفّشوا",what:"الفكرة ممكن تكون قوية، بس صوت فيه صدى أو وش غامق كفاية يخلّي الناس تمشي في أول ثواني.",step:"صوّر الفيديو الجاي والشباك قدامك مش وراك، والموبايل قريب منك أو المايك في ياقة القميص، والعدسة في مستوى عينك.",ch:[14,15,16,17]},
+  measure:{name:"بتنشر ومش بتقيس",what:"إنت شغال، بس من غير ما تعرف الناس بتسيب الفيديو فين. فكل فيديو بيبدأ من الصفر بدل ما يتعلّم من اللي قبله.",step:"افتح أرقام آخر فيديو، وشوف المشاهد بيسيب في أنهي ثانية. اكتبها، وغيّر الحتة دي بس في الفيديو الجاي.",ch:[28,29,30,31]},
+  reach:{name:"محتوى حلو محدش شايفه",what:"اللي بيتفرج بيعجبه، بس الفيديو مش بيوصل لناس جديدة. غالبًا المشكلة في الغلاف والعنوان وشكل الفيديو على كل منصة.",step:"اعمل للفيديو الجاي 3 أغلفة بـ3 عناوين مختلفة قبل ما تنشر، واختار اللي يفهّم الفكرة في ثانية.",ch:[24,25,26,27]}
+};
+const QS=[
+  {q:"أول جملة في الفيديو بتاعك غالبًا بتكون؟",o:[["السلام وتعريف بنفسي","hook"],["مقدمة عن الموضوع","hook"],["النتيجة أو المشكلة على طول","script"],["بتختلف كل مرة","measure"]]},
+  {q:"لما بتختار فكرة الفيديو، بتبدأ منين؟",o:[["ترند شايفه عند ناس تانية","angle"],["حاجة أنا عايز أقولها","audience"],["مش بفكر كتير، بصوّر على طول","angle"],["سؤال سمعته من الناس","reach"]]},
+  {q:"الفيديو بتاعك بيكلّم مين؟",o:[["أي حد مهتم بالموضوع","audience"],["فئة واضحة بس كبيرة","audience"],["شخص واحد بعينه","script"],["مش متأكد","angle"]]},
+  {q:"الناس بتسيب الفيديو بتاعك فين؟",o:[["في أول ثانيتين","hook"],["في النص","script"],["مش بيسيبوا، بس قليلين اللي بيشوفوه","reach"],["مش عارف أشوف ده فين","measure"]]},
+  {q:"الصورة والصوت عندك عاملين إزاي؟",o:[["الصوت بعيد أو فيه صدى","production"],["الإضاءة غامقة أو الشباك ورايا","production"],["كويسين ومش هي المشكلة","script"],["اشتريت معدات وبرضه مفيش فرق","angle"]]},
+  {q:"بعد ما تنشر بتعمل إيه؟",o:[["بستنى وبشوف اللايكات","measure"],["بنزّل اللي بعده على طول","measure"],["بقارن الأرقام باللي قبله","reach"],["بمسحه لو مجابش","measure"]]},
+  {q:"الغلاف والعنوان بتوع الفيديو؟",o:[["بعملهم في الآخر بسرعة","reach"],["بسيب المنصة تختار","reach"],["بشتغل عليهم زي الفيديو","script"],["مش فاهم بيفرقوا في إيه","reach"]]},
+  {q:"أكتر حاجة بتضايقك؟",o:[["الناس بتعدّي بسرعة","hook"],["بيتفرجوا بس محدش بيتابع","audience"],["الفيديو مبيوصلش لحد","reach"],["مش عارف أنا غلطان فين","measure"]]}
+];
+const ORDER=["hook","script","angle","audience","production","reach","measure"];
+let ans=[];
+const $=id=>document.getElementById(id);
+function renderQ(){
+  const i=ans.length; if(i>=QS.length) return showRes();
+  $('qNum').textContent="سؤال "+(i+1)+" من "+QS.length;
+  $('qBar').style.width=(i/QS.length*100)+"%";
+  $('qText').textContent=QS[i].q;
+  $('qBack').hidden=i===0;
+  const box=$('qOpts'); box.innerHTML="";
+  QS[i].o.forEach(([t,k])=>{const b=document.createElement('button');b.type='button';b.className='q-opt';b.textContent=t;b.onclick=()=>{ans.push(k);renderQ();};box.appendChild(b);});
+}
+function showRes(){
+  const s={}; ans.forEach(k=>s[k]=(s[k]||0)+1);
+  const top=ORDER.slice().sort((a,b)=>(s[b]||0)-(s[a]||0))[0], r=RES[top];
+  $('qWrap').hidden=true; const el=$('qRes'); el.hidden=false;
+  el.innerHTML=`<div class="mono">النتيجة بتاعتك</div><h3>${r.name}</h3>
+    <div class="q-box"><h4>إيه اللي بيحصل</h4><p>${r.what}</p></div>
+    <div class="q-box dark"><h4>خطوتك النهارده</h4><p>${r.step}</p></div>
+    <div class="q-box"><h4>الفصول اللي هتفيدك أكتر</h4><ul class="q-chs">${r.ch.map(n=>`<li><span>${String(n).padStart(2,'0')}</span>${CH[n]}</li>`).join('')}</ul></div>
+    <div class="q-actions"><a class="btn btn-gold js-buy" href="#">احجز نسختك</a><button class="btn btn-ghost" type="button" id="qShare">ابعت الكويز لصاحبك</button></div>
+    <button class="q-back" type="button" id="qAgain">أعيد الكويز</button>
+    <p class="q-small">الكويز إرشاد عام، مش تشخيص نهائي.</p>`;
+  setBuy(r.name);
+  $('qAgain').onclick=()=>{ans=[];el.hidden=true;$('qWrap').hidden=false;setBuy("");renderQ();};
+  $('qShare').onclick=async e=>{
+    const url=location.href.split('#')[0]+'#quiz';
+    try{ if(navigator.share){await navigator.share({title:"ليه المحتوى بتاعك مش بيكبر؟",text:"جرّب الكويز ده، دقيقتين بس:",url});return;} }catch(_){return;}
+    try{ await navigator.clipboard.writeText(url); e.target.textContent="اللينك اتنسخ"; }catch(_){ e.target.textContent=url; }
+  };
+  $('quiz').scrollIntoView({behavior:'smooth',block:'start'});
+}
+$('qBack').onclick=()=>{ans.pop();renderQ();};
+renderQ();
+document.getElementById('y').textContent=new Date().getFullYear();
+const st=document.getElementById('sticky');
+addEventListener('scroll',()=>st.classList.toggle('show',scrollY>520),{passive:true});
+</script>
+</body>
+</html>
